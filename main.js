@@ -355,7 +355,7 @@ function putFlash6(w, h, fn, querystring, clr, noflash) {
 			s = '<a href="/flash-player.html"><img src="/images/style/no-flash.jpg" alt="Needs Flash Player"></a>';
 		}
 		document.write(s);
-		
+
 		if (Math.random() < 0.1) {
 			// log that flash not available
 			var path = location.pathname;
@@ -363,8 +363,8 @@ function putFlash6(w, h, fn, querystring, clr, noflash) {
 	    var pgHex = '';
 	    for (var i=0; i<pg.length; i++) {
 	        pgHex += '' + pg.charCodeAt(i).toString(16);
-	    }						
-			addView(pgHex, "View", window.location.hostname); 
+	    }
+			addView(pgHex, "View", window.location.hostname);
 		}
 	}
 }
@@ -477,6 +477,7 @@ function getQ() {
 	document.write(s);
 }
 
+
 function getMenuTop() {
 	// cope with urls at root or down one folder  NB: what about URLs down two folders?
 
@@ -539,149 +540,149 @@ function getMenuTop() {
 function endsWith(str, suffix) {
 	return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
-function getAdRight() {
-	var s = "";
-	s += '<div style="margin-left: -425px; width:300px;">';
-	s += getLinks(true);
-	s += '</div>';
-	document.write(s);
-}
-function getAdRight2() {
-	var s = '';
-	//s += '<div style="border: 4px solid green; width: 360px;"></div>';
-	s += getLinks(false);
-	if (true) {
-		s += '<div id="google_translate_element" style="border: none; display:inline; float:left; "></div>';
-		s += '<script type="text/javascript">';
-		s += '	function googleTranslateElementInit() {';
-		s += "new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');";
-		s += '	}</script>';
-		s += '	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>';
-	}
-	if (true) {
-	var url = location.href;   //  safe?
-			s += '<div style="border: none; display:inline; margin: 0px; position:absolute; left:310px;">';
-			s += '<span class="g-plusone" data-size="standard" data-href="' + url + '"></span>';
-			s += '</div>';
-	}
-	//s += '</div>';
-	document.write(s);
-}
-function getAdTop() {
-	var s = "";
-	s += '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
-	s += '<!-- MIFTop -->';
-	s += '<ins class="adsbygoogle"';
-	s += '     style="display:block;height:100px"';
-	s += '     data-ad-client="ca-pub-1389989178296449"';
-	s += '     data-ad-slot="6226552230"';
-	s += '     data-ad-format="auto"></ins>';
-	s += '<script>';
-	s += '(adsbygoogle = window.adsbygoogle || []).push({});';
-	s += '</script>';
-	document.write(s);
-}
-function getAdEnd() {
-	var url = location.href;
-	if (url.indexOf("definitions") > 0) return;
-	var s = "";
-	s += '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
-	s += '<!-- MathsIsFunResp -->';
-	s += '<ins class="adsbygoogle mathsisfunresp"';
-	s += '     style="display:inline-block"';
-	s += '     data-ad-client="ca-pub-1389989178296449"';
-	s += '     data-ad-slot="8658120633"></ins>';
-	s += '<script>';
-	s += '(adsbygoogle = window.adsbygoogle || []).push({});';
-	s += '</script>';
-	document.write(s);
-}
-function getLinks(oldQ) {
-	//var ffq = false;
-	//if (navigator.userAgent.indexOf("Firefox")!=-1) ffq = true;
-	//var url    = encodeURIComponent(location.href);
-	var url = location.href;   //  safe?
-	var title = encodeURIComponent(document.title);
-	var linkstt = '<a target="_blank" href="';
-
-	var s = "";
-	s += linkstt + 'http://twitter.com/home?status=' + title + ': ' + url + '" id="linktw">Twitter</a> ';
-	s += linkstt + "http://www.stumbleupon.com/submit?url=" + url + "&title=" + title.replace(/%20/g, '+') + '" id="linksu">StumbleUpon</a> ';
-	s += linkstt + "http://www.facebook.com/sharer.php?u=" + url + "&t=" + title + '" id="linkfb">Facebook</a> ';
-	s += '<a href="javascript:linkToUs()" id="linkus">Link To Us</a>';
-	return s;
-}
-function getBodyEnd() {
-	doPic();
-// delay scripts till end to speed page load (only on templates post June 2011)
-	var ffq = false;
-	if (navigator.userAgent.indexOf("Firefox") != -1) ffq = true;
-
-	var s = "";
-	//s += '<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>';
-	s += gPlusOneCall();
-	s += gAnalyticsCall();
-	if (ffq) {
-	} else {
-		//s += '<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>';
-	}
-
-	document.write(s);
-}
-function gPlusOneCall() {
-// http://www.google.com/webmasters/+1/button/#utm_source=wm&utm_medium=blog&utm_campaign=schema
-	var s = "";
-	s += '<script type="text/javascript">';
-	s += '(function() {';
-	s += "var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;";
-	s += "po.src = 'https://apis.google.com/js/plusone.js';";
-	s += "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);";
-	s += '})();';
-	s += '</script>';
-	return s;
-}
-function gAnalyticsCall() {
-	var s = "";
-	s += '<script type="text/javascript">';
-	s += 'var _gaq = _gaq || [];';
-	s += "_gaq.push(['_setAccount', 'UA-29771508-1']);";
-	s += "_gaq.push(['_trackPageview']);";
-	s += '(function() {';
-	s += "var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;";
-	s += "ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';";
-	s += "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);";
-	s += '})();';
-	s += '</script>';
-	return s;
-}
-
-function logVisit() {
-	var pg = location.pathname;
-	var pgHex = '';
-	for (var i = 0; i < pg.length; i++) {
-		pgHex += '' + pg.charCodeAt(i).toString(16);
-	}
-	addView(pgHex, "Visit", window.location.hostname); 
-}
-if (Math.random() < 0.1) logVisit();
-
-function addView(pg, viewtype, hostname) {  
-	var req;
-	req = new XMLHttpRequest();
-
-	params = "type=" + viewtype;
-	params += "&pg=" + encodeURIComponent(pg);
-
-	if (hostname == "localhost") {   // hostname so we can know if develop or production
-		req.open("POST", "http://localhost:81/mathopolis/links/update.php", true);    // NB: false=synchronous
-	} else {
-		req.open("POST", "http://www.mathopolis.com/links/update.php", true);     // NB: false=synchronous
-	}
-	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	req.setRequestHeader("Content-length", params.length);
-	req.setRequestHeader("Connection", "close");
-	req.send(params);
-}
+// function getAdRight() {
+// 	var s = "";
+// 	s += '<div style="margin-left: -425px; width:300px;">';
+// 	s += getLinks(true);
+// 	s += '</div>';
+// 	document.write(s);
+// }
+// function getAdRight2() {
+// 	var s = '';
+// 	//s += '<div style="border: 4px solid green; width: 360px;"></div>';
+// 	s += getLinks(false);
+// 	if (true) {
+// 		s += '<div id="google_translate_element" style="border: none; display:inline; float:left; "></div>';
+// 		s += '<script type="text/javascript">';
+// 		s += '	function googleTranslateElementInit() {';
+// 		s += "new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');";
+// 		s += '	}</script>';
+// 		s += '	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>';
+// 	}
+// 	if (true) {
+// 	var url = location.href;   //  safe?
+// 			s += '<div style="border: none; display:inline; margin: 0px; position:absolute; left:310px;">';
+// 			s += '<span class="g-plusone" data-size="standard" data-href="' + url + '"></span>';
+// 			s += '</div>';
+// 	}
+// 	//s += '</div>';
+// 	document.write(s);
+// }
+// function getAdTop() {
+// 	var s = "";
+// 	s += '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
+// 	s += '<!-- MIFTop -->';
+// 	s += '<ins class="adsbygoogle"';
+// 	s += '     style="display:block;height:100px"';
+// 	s += '     data-ad-client="ca-pub-1389989178296449"';
+// 	s += '     data-ad-slot="6226552230"';
+// 	s += '     data-ad-format="auto"></ins>';
+// 	s += '<script>';
+// 	s += '(adsbygoogle = window.adsbygoogle || []).push({});';
+// 	s += '</script>';
+// 	document.write(s);
+// }
+// function getAdEnd() {
+// 	var url = location.href;
+// 	if (url.indexOf("definitions") > 0) return;
+// 	var s = "";
+// 	s += '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
+// 	s += '<!-- MathsIsFunResp -->';
+// 	s += '<ins class="adsbygoogle mathsisfunresp"';
+// 	s += '     style="display:inline-block"';
+// 	s += '     data-ad-client="ca-pub-1389989178296449"';
+// 	s += '     data-ad-slot="8658120633"></ins>';
+// 	s += '<script>';
+// 	s += '(adsbygoogle = window.adsbygoogle || []).push({});';
+// 	s += '</script>';
+// 	document.write(s);
+// }
+// function getLinks(oldQ) {
+// 	//var ffq = false;
+// 	//if (navigator.userAgent.indexOf("Firefox")!=-1) ffq = true;
+// 	//var url    = encodeURIComponent(location.href);
+// 	var url = location.href;   //  safe?
+// 	var title = encodeURIComponent(document.title);
+// 	var linkstt = '<a target="_blank" href="';
+//
+// 	var s = "";
+// 	s += linkstt + 'http://twitter.com/home?status=' + title + ': ' + url + '" id="linktw">Twitter</a> ';
+// 	s += linkstt + "http://www.stumbleupon.com/submit?url=" + url + "&title=" + title.replace(/%20/g, '+') + '" id="linksu">StumbleUpon</a> ';
+// 	s += linkstt + "http://www.facebook.com/sharer.php?u=" + url + "&t=" + title + '" id="linkfb">Facebook</a> ';
+// 	s += '<a href="javascript:linkToUs()" id="linkus">Link To Us</a>';
+// 	return s;
+// }
+// function getBodyEnd() {
+// 	doPic();
+// // delay scripts till end to speed page load (only on templates post June 2011)
+// 	var ffq = false;
+// 	if (navigator.userAgent.indexOf("Firefox") != -1) ffq = true;
+//
+// 	var s = "";
+// 	//s += '<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>';
+// 	s += gPlusOneCall();
+// 	s += gAnalyticsCall();
+// 	if (ffq) {
+// 	} else {
+// 		//s += '<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>';
+// 	}
+//
+// 	document.write(s);
+// }
+// function gPlusOneCall() {
+// // http://www.google.com/webmasters/+1/button/#utm_source=wm&utm_medium=blog&utm_campaign=schema
+// 	var s = "";
+// 	s += '<script type="text/javascript">';
+// 	s += '(function() {';
+// 	s += "var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;";
+// 	s += "po.src = 'https://apis.google.com/js/plusone.js';";
+// 	s += "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);";
+// 	s += '})();';
+// 	s += '</script>';
+// 	return s;
+// }
+// function gAnalyticsCall() {
+// 	var s = "";
+// 	s += '<script type="text/javascript">';
+// 	s += 'var _gaq = _gaq || [];';
+// 	s += "_gaq.push(['_setAccount', 'UA-29771508-1']);";
+// 	s += "_gaq.push(['_trackPageview']);";
+// 	s += '(function() {';
+// 	s += "var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;";
+// 	s += "ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';";
+// 	s += "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);";
+// 	s += '})();';
+// 	s += '</script>';
+// 	return s;
+// }
+//
+// function logVisit() {
+// 	var pg = location.pathname;
+// 	var pgHex = '';
+// 	for (var i = 0; i < pg.length; i++) {
+// 		pgHex += '' + pg.charCodeAt(i).toString(16);
+// 	}
+// 	addView(pgHex, "Visit", window.location.hostname);
+// }
+// if (Math.random() < 0.1) logVisit();
+//
+// function addView(pg, viewtype, hostname) {
+// 	var req;
+// 	req = new XMLHttpRequest();
+//
+// 	params = "type=" + viewtype;
+// 	params += "&pg=" + encodeURIComponent(pg);
+//
+// 	if (hostname == "localhost") {   // hostname so we can know if develop or production
+// 		req.open("POST", "http://localhost:81/mathopolis/links/update.php", true);    // NB: false=synchronous
+// 	} else {
+// 		req.open("POST", "http://www.mathopolis.com/links/update.php", true);     // NB: false=synchronous
+// 	}
+// 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+// 	req.setRequestHeader("Content-length", params.length);
+// 	req.setRequestHeader("Connection", "close");
+// 	req.send(params);
+// }
 
 
 //window.addEventListener("scroll", onScroll);
@@ -782,7 +783,7 @@ function initVideo(id, titleid, spanid, style) {
 
 	// in FF, setting width AGAIN causes window to reset size
 	if (navigator.appName=="Microsoft Internet Explorer") window.onresize = resizeVideo;
-	
+
 	title = document.getElementById(titleid).innerHTML;
 
 	s = '';
@@ -798,9 +799,9 @@ function initVideo(id, titleid, spanid, style) {
 	s += '  <div style="margin:0 auto;">';
 	s += '    <h1 align="center">' + title + '</h1>';
 	s += '  </div>';
-	s += '</div>';	
+	s += '</div>';
 			break;
-			
+
 		case "h2":
 	s += '<div style="float:right; width:100px; margin: -10px 0 5px 0;">';
 	s += '  <a href="javascript:doVideo(\'' + id + '\',\'' + spanid + '\')">';
@@ -810,20 +811,20 @@ function initVideo(id, titleid, spanid, style) {
 	s += '    <h2>' + title + '</h2>';
 			break;
 	}
-	
+
 	document.getElementById(titleid).innerHTML = s;	    // outerHTML ?
-	
+
 }
 
 function doVideo(id,spanid) {
 	var s="";
-	    
+
 	var visIndex = videoVis.indexOf(spanid);
-	var visQ = visIndex > -1 ? true : false;  // is it currently visible?   
+	var visQ = visIndex > -1 ? true : false;  // is it currently visible?
 
 	if (visQ) {       // turn off
  		var frame = document.getElementById(spanid + "v1");
- 		frame.parentNode.removeChild(frame);	
+ 		frame.parentNode.removeChild(frame);
 		videoVis.splice(visIndex, 1);
 		visQ = false;
 	} else {           // turn on
@@ -833,7 +834,7 @@ function doVideo(id,spanid) {
  		videoVis.push(spanid);
 		visQ = true;
 	}
-	
+
 	var vid = document.getElementById(spanid);
 	vid.innerHTML = s;
 	if (visQ) resizeVideo(spanid);
@@ -843,16 +844,16 @@ function doVideo(id,spanid) {
     var pgHex = '';
     for (var i=0; i<pg.length; i++) {
         pgHex += '' + pg.charCodeAt(i).toString(16);
-    }						
+    }
 		addView(pgHex, "View", window.location.hostname); // hostname so we can know if develop or production
 	}   */
 }
-function resizeVideo(spanid) {       
+function resizeVideo(spanid) {
 	var v1 = document.getElementById(spanid + "v1");
 	var wd = window.innerWidth-40;
 	if (wd>640) wd = 640;
-  v1.style.width = wd + "px";   
-  v1.style.height = (wd*(340/640)+80) + "px";   
-} 
+  v1.style.width = wd + "px";
+  v1.style.height = (wd*(340/640)+80) + "px";
+}
 
 videoVis = Array();
