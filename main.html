@@ -15,27 +15,29 @@
 <body>
 <div class="centerfull">
 	<div id="midfull">
-		<div id="header" role="banner">
-			<div id="searchBox" role="search">
-				<form action="../sphider/search.php" method="get">
-					<input type="text" name="query" value="" id="searchFld" />
-					<input type="submit" value="Search" name="submit" id="searchBtn" />
-					<input type="hidden" name="search" value="1" />
-				</form>
-			</div>
+		<div id="top-bar">
+			<div id="header" role="banner">
+				<div id="searchBox" role="search">
+					<form action="../sphider/search.php" method="get">
+						<input type="text" name="query" value="" id="searchFld" />
+						<input type="submit" value="Search" name="submit" id="searchBtn" />
+						<input type="hidden" name="search" value="1" />
+					</form>
+				</div>
 
-			<div id="linkto">
-				<script type="text/javascript">getAdRight2();</script>
+				<div id="linkto">
+					<script type="text/javascript">getAdRight2();</script>
+				</div>
 			</div>
+			<div id="menu" class="centerfull" role="navigation">
+				<script type="text/javascript">getMenuTop();</script>
+			</div>
+		</div>
 
+		<div id="adhid2">
+			<div id="showads1"><a href="javascript:showads()">Show Ads</a></div>
+			<div id="hideads1"><a href="javascript:hideads()">Hide Ads</a><br /><a href="../about-ads.html">About Ads</a></div>
 		</div>
-		<div id="menu" class="centerfull" role="navigation">
-			<script type="text/javascript">getMenuTop();</script>
-		</div>
-			<div id="adhid2">
-				<div id="showads1"><a href="javascript:showads()">Show Ads</a></div>
-				<div id="hideads1"><a href="javascript:hideads()">Hide Ads</a><br /><a href="../about-ads.html">About Ads</a></div>
-			</div>
 
 		<div id="topads" class="centerfull noprint">
 			<script type="text/javascript">getAdTop();</script>

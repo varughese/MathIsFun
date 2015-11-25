@@ -202,7 +202,7 @@ input:focus, select:focus, textarea:focus { border: thin solid #000; }
 #showads1 { display: none; }
 
 /* html5 instead of align element */
-.centerfull {margin-right:auto; margin-left:auto; max-width:760px; text-align:center; }
+.centerfull {margin-right:auto; margin-left:auto; max-width:860px; text-align:center; }
 .center {text-align: center; }
 table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 .left {left: 0; text-align:left}
@@ -210,30 +210,33 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 
 /* main layout background-color: #ccccff; */
 #headerx { height: 100px; background: transparent url(images/style/header.png) no-repeat; }
-#header  { height: 100px; background: transparent url(images/style/header.png) no-repeat; cursor: pointer; }
+#header  { height: 100px; background: #C8ECFF url(images/style/header.png) no-repeat center; cursor: pointer; }
 #adv #header, #header-adv { height: 100px; background: transparent url(images/style/header-adv.png) no-repeat; cursor: pointer; }
 
 
 
 	/*   */
-#menu { clear:both; margin-left: -50px; margin-right: -50px; max-width: 900px;}
+#menu { clear:both; max-width: 860px;}
 #menu ul { padding: 0; margin: 0; display:inline; font-size: 0; }
 #menu li {
     position: relative;
     display: inline-block;
-    /* background-color: #bbffbb; */
+     background-color: #bbffbb;
     padding: 18px 8px 8px 8px;
     color: #2DA72D!important;
-    border-bottom: 3px solid #2DA72D;
     margin: 0;
     font-size: 14px;
     text-transform: uppercase;
 }
 
+#menu li:first-child { padding-left: 18px; }
+#menu li:last-child { padding-right: 18px; }
+
+
 #menu li:hover { background-color: #2DA72D; }
 #menu li:hover > a { color: white; }
 #menu li a { text-decoration: none; color: #2DA72D}
-#menu li ul { top: 27px; right: 0px; position: absolute; display: block; z-index: 1; }
+#menu li ul { top: 57px; right: 0px; position: absolute; display: block; z-index: 1; }
 #menu li li { display: block; }
 #menu ul ul { display: none; }
 #menu ul li:hover > ul { display: block;  }
@@ -241,23 +244,56 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 
 /* older pages to Apr 2013 */
 
-#menu { font-size: 12px; }
+#menu { font-size: 12px; background: #BBFFBB; border-bottom: 3px solid #2DA72D;}
 #menu a { font-size: 17px; font-weight: bold; }       /*        background-color: #bbffbb;
 #menu a:hover { background-color: #cceeff; }       */
 
 
 
 
-#midfull { max-width: 760px; /* border: 2px solid #666600; border-radius: 8px; padding: 4px; margin: 4px; background: #ffffff; */ }
+#midfull { max-width: 860px; /* border: 2px solid #666600; border-radius: 8px; padding: 4px; margin: 4px; background: #ffffff; */ }
 #search { position:relative; top:64px; width: 380px;  float:right;}
-#searchBox { position:relative; top:57px; width: 380px; float:right; }
-#searchFld { font-size: 18px; width:260px; padding: 4px;  border-radius: 5px;}
-#searchBtn { font-size: 18px; font-weight: bold; color: #ffffff; background-color: #8888ff; border: 1px solid #666600; cursor: pointer; padding: 4px 12px 4px 12px; border-radius: 5px; }
-#searchBtn:hover {background-color: #aaaaff; }
+#searchBox { position:relative; top:57px; width: 380px; float:right; right: 10px;}
+#searchFld {
+    /* font-size: 18px; */
+    width: 260px;
+    /* padding: 4px; */
+    padding: 8px;
+    border-radius: 3px;
+    line-height: 1.6;
+    border: 1px solid #4A84B4;
+}
+/*#searchBtn { font-size: 18px; font-weight: bold; color: #ffffff; background-color: #8888ff; border: 1px solid #666600; cursor: pointer; padding: 4px 12px 4px 12px; border-radius: 5px; }*/
+#searchBtn {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #4A84B4;
+    color: #C8ECFF;
+}
+
+#searchBtn:hover {background-color: #3A5294; color: #E9FBFF; }
 #linkto { position:relative; top:5px; left: 50%; background-color: white;}
 /*#linkto { position:relative; width: 360px; top:5px; left: 350px; float:right; background-color:rgba(250,250,250,0.6); border: 2px solid white; }*/
 #adhide { font: 10px Verdana, serif; width:100px; position:relative; top:45px; left: 430px; }
-#adhid2 { font: 10px Verdana, serif; width:70px; position:relative; top:-30px; left: 760px; }
+#adhid2 { font: 10px Verdana, serif; width:70px; position:relative; top:45px; left: 760px; }
 #content { padding: 20px 5px 0px 5px; text-align: left; }
 #footer { max-width: 550px; height: 50px; margin-left: auto; margin-right: auto; }
 #foot-menu { clear:both; }
@@ -286,8 +322,6 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 .intbl { display: inline-table; text-align: center; vertical-align: middle; border-collapse:collapse; margin: 0 2px 0 2px;}
 .intbl em { display: table-row; text-align: center; border-bottom:solid black 1px; font-style: inherit; font-size: 92%; }
 .intbl strong { display: table-row; text-align: center; font-weight: inherit; font-size: 92%; }
-
-
 
 /* side images */
 .column {	width: 50%; position: absolute; top: 0; }
@@ -324,7 +358,7 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 	#adhid2 { top:0px; left: 680px; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 860px) {
 	/* at about 760px, the browser decides that SearchBox and linkto no longer fit on one line but two, so we move to a different layout */
 	#adhid2 {display: none;}
 	#leftcol {display: none;}

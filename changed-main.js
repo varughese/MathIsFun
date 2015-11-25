@@ -41,7 +41,7 @@ function getMenuTop() {
 		["geometry/index.html", "Geometry", 0], ["measure/index.html", "Measure", 0], ["money/index.html", "Money", 1], ["numbers/index.html", "Numbers", 0],
 		["activity/index.html", "Activities", 1], ["definitions/index.html", "Dictionary", 0], ["games/index.html", "Games", 0]]//,
 		// ["puzzles/index.html", "Puzzles", 0],
-		// ["worksheets/index.php", "Worksheets", 0]];
+		// ["worksheets/index.php", "Worksheets", 0]]; //replace with "extras"
 
 	var s = "";
 	s += '<ul>';
