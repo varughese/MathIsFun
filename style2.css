@@ -139,7 +139,7 @@ img.in { vertical-align: middle; border:0; }
     margin-right: -15px;
     margin-top: 0;
     background: #000088;
-    padding: 4px;
+    padding: 9px;
     color: white;
 }
 
@@ -324,6 +324,38 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 #linkfb { background-position: -100px 0px; }
 #linkus { background-position: -150px 0px; }
 
+#content h1 {
+    margin-left: -55px;
+    margin-right: -55px;
+    background: #C8ECFF;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#content h1::before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 0;
+    border-width: 5px 10px;
+    border-style: solid;
+    border-color: #008 #008 transparent transparent;
+}
+
+#content h1::after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 100%;
+    right: 0;
+    border-width: 5px 10px;
+    border-style: solid;
+    border-color: #008 transparent transparent #008;
+}
 
 .submitBtn { font-size: 16px; font-weight: bold; background-color: #F0F0C0; border: 2px solid #ff0000; cursor: pointer; }
 .submitBtn:hover {background-color: #ccccff;}
