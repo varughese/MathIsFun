@@ -256,7 +256,13 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 #menu li:hover { background-color: #2DA72D; }
 #menu li:hover > a { color: white; }
 #menu li a { text-decoration: none; color: #2DA72D}
-#menu li ul { top: 57px; right: 0px; position: absolute; display: block; z-index: 1; }
+#menu li ul { top: 52px;
+    right: 0px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    border: 3px solid #2DA72D;
+}
 #menu li li { display: block; }
 #menu ul ul { display: none; }
 #menu ul li:hover > ul { display: block;  }
