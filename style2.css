@@ -415,6 +415,12 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 /*#linkto { position:relative; width: 360px; top:5px; left: 350px; float:right; background-color:rgba(250,250,250,0.6); border: 2px solid white; }*/
 #adhide { font: 10px Verdana, serif; width:100px; position:relative; top:45px; left: 430px; }
 #adhid2 { font: 10px Verdana, serif; width:70px; position:relative; top:45px; left: 760px; }
+
+#adhid2 a {
+    color: firebrick;
+    text-transform: uppercase;
+}
+
 #content { padding: 20px 35px 0px 35px; text-align: left; }
 #footer { max-width: 550px; height: 50px; margin-left: auto; margin-right: auto; }
 #foot-menu {
@@ -450,12 +456,16 @@ table.center {margin-right:auto; margin-left:auto; text-align: inherit;}
 #content h1 {
     margin-left: -55px;
     margin-right: -55px;
-    background: #C8ECFF;
+    background: #4A84B4;
     padding: 10px;
     position: relative;
     text-transform: uppercase;
     font-weight: bold;
+    color: #C8ECFF;
 }
+
+/* Ribbons */
+
 #content h1::before {
     content: ' ';
     position: absolute;
