@@ -1,3 +1,6 @@
+/* demo purposes, since I removed ad functions as I am doing this locally */
+#topads, #adend { background: firebrick; }
+
 @font-face {
   font-family: qarmic;
   src:
