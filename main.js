@@ -472,7 +472,7 @@ function getQ() {
 	}
 	var s = "";
 	for (i = 0; i < arguments.length; i++) {
-		s += '<a href="javascript:doQ(' + arguments[i] + ",'" + qs + "'" + ')">Question&nbsp;' + (i + 1) + '</a> ';
+		s += '<a href="javascript:doQ(' + arguments[i] + ",'" + qs + "'" + ')">' + (i + 1) + '</a> ';
 	}
 	document.write(s);
 }
